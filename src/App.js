@@ -16,6 +16,7 @@ class App extends Component {
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><Link to="/topics">Topics</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
             </ul>
 
             <hr/>
@@ -23,6 +24,7 @@ class App extends Component {
             <Route exact path="/" component={Home}/>
             <Route path="/about" component={About}/>
             <Route path="/topics" component={Topics}/>
+            <Route path="/contact" component={Contact}/>
           </div>
         </Router>
       </div>
@@ -73,6 +75,12 @@ const Topics = ({ match }) => (
 const Topic = ({ match }) => (
   <div>
     <h3>{match.params.topicId}</h3>
+  </div>
+)
+
+const Contact = () => (
+  <div>
+    <h2>Contact</h2>
   </div>
 )
 
