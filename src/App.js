@@ -3,7 +3,8 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  Link,
+  Switch
 } from 'react-router-dom'
 
 class App extends Component {
@@ -20,11 +21,13 @@ class App extends Component {
             </ul>
 
             <hr/>
-
-            <Route exact path="/" component={Home}/>
-            <Route path="/about" component={About}/>
-            <Route path="/topics" component={Topics}/>
-            <Route path="/contact" component={Contact}/>
+            <Switch>
+              <Route exact path="/" component={Home}/>
+              <Route path="/about" component={About}/>
+              <Route path="/topics" component={Topics}/>
+              <Route path="/contact" component={Contact}/>
+              <Route component={NoMatch}/>
+            </Switch>
           </div>
         </Router>
       </div>
@@ -81,6 +84,12 @@ const Topic = ({ match }) => (
 const Contact = () => (
   <div>
     <h2>Contact</h2>
+  </div>
+)
+
+const NoMatch = () => (
+  <div>
+    <h3>No match for this route</h3>
   </div>
 )
 
